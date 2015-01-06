@@ -1,0 +1,101 @@
+<?php
+$title = "Project One";
+
+$topContent = '
+
+		<h1> Clock I/O </h1>
+
+';
+#fill in neccessary html code here
+
+$input = '
+
+	<form name = "form" action = "userInputHandler.php" method = "post">
+		
+		First name: <input type = "text" name = "fname">
+		Last name: <input type = "text" name = "lname">
+		<input type = "submit" value = "Submit">
+
+	</form>
+
+';
+
+$table = '
+
+	<table align = "center">
+
+	<tr>
+		<th> ID </th>
+		<th> First name </th>
+		<th> Last name </th>
+		<th> Clock In </th>
+		<th> Clock Out </th>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td><?php echo $_POST["fname"]; ?></td>
+		<td><?php echo $_POST["lname"]; ?></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+	</table>
+
+';
+#fill in the necessary html code here 
+
+
+include 'Template.php';
+?>
+
+
+
+<?php
+/*
+
+require 'Controller.php';
+
+	$userController = new Controller();
+
+	$usertable = $userController->CreateTable('%');
+
+	// Output page data
+	$table = $userController->$usertable;
+*/
+	?>
+
+
+<?php
+
+// stores user data sent by HTTP POST to variables
+	$first = mysqli_real_escape_string($_POST["fname"]); 
+	$last = mysqli_real_escape_string($_POST["lname"]); 
+	
+
+require 'credentials.php';
+
+	// Create connection
+	$conn = mysqli_connect($servername, $username, $password, $dbname); 
+	if (!$conn) {
+		die("Error: " . mysqli_error());
+	}
+
+	else {
+		echo "Success!";
+	}
+
+	//insert data
+	$sql = "INSERT INTO User (Firstname, Lastname)
+	VALUES ('first', 'last')";
+
+	//check data insertion success
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+
+	mysqli_close($conn);
+?>
