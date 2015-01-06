@@ -1,0 +1,40 @@
+body {
+	min-width: 700px;
+	min-height: 700px;
+}
+
+#clockbox {
+font: 14pt Arial;
+text-align: center;
+
+}
+
+#top_content h1 {
+	text-align: center;
+	padding-top: 50px;
+}
+
+#center_content {
+	padding-top: 50px;
+}
+
+#center_content table, th, td {
+	border: 1px solid black;
+}
+
+#center_content th, td {
+	padding: 15px;
+}
+
+#center_content form {
+	text-align: center;
+}
+
+footer {
+	text-align: right;
+	clear: both;
+    width: auto;
+    height: 40px;
+    padding: 10px;
+    position: relative;
+}
