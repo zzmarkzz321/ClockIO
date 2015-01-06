@@ -1,0 +1,51 @@
+<?php
+$title = "Project One";
+
+$topContent = '
+
+		<h1> Clock I/O </h1>
+
+';
+#fill in neccessary html code here
+
+$input = '
+
+	<form name = "form" action = "userInputHandler.php" method = "post">
+		
+		First name: <input type = "text" name = "fname">
+		Last name: <input type = "text" name = "lname">
+		<input type = "submit" value = "Submit">
+
+	</form>
+
+';
+
+$table = '
+
+	<table align = "center">
+
+	<tr>
+		<th> ID </th>
+		<th> First name </th>
+		<th> Last name </th>
+		<th> Clock In </th>
+		<th> Clock Out </th>
+	</tr>
+
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+
+	</table>
+
+';
+#fill in the necessary html code here 
+
+
+
+include 'Template.php';
+?>
