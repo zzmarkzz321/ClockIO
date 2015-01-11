@@ -1,4 +1,9 @@
-<?php
+<?php 
+require 'Controller.php';
+
+$userController = new userController();
+
+
 $title = "Project One";
 
 $topContent = '
@@ -20,32 +25,15 @@ $input = '
 
 ';
 
-$table = '
-
-	<table align = "center">
-
-	<tr>
-		<th> ID </th>
-		<th> First name </th>
-		<th> Last name </th>
-		<th> Clock In </th>
-		<th> Clock Out </th>
-	</tr>
-
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-
-	</table>
-
-';
-#fill in the necessary html code here 
-
-
+$table =  $userController->createTable();
 
 include 'Template.php';
+
+#Notes
+/*
+
+Everything works fine here
+
+
+*/
 ?>
