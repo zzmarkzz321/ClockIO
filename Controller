@@ -1,0 +1,53 @@
+<?php 
+require 'Model.php';
+
+class userController {
+
+	public function createTable() {
+
+		$userModel = new userModel();
+		$Array = array();
+        $Array = $userModel->getInfo();
+                
+        $result =
+            "
+            <table class = 'table' align = 'center'>
+
+				<tr>
+					<th> ID </th>
+					<th> First name </th>
+					<th> Last name </th>
+					<th> Clock In </th>
+					<th> Clock Out </th>
+				</tr>
+
+				<tr>
+					<td>$Array[0]</td>
+					<td>$Array[1]</td>
+					<td>$Array[2]</td>
+					<td>$Array[3]</td>
+					<td><p id = 'out'> </p></td>
+				</tr>
+
+			</table>
+			";
+               
+        return $result;
+
+	}
+
+}
+
+#Notes
+/*
+
+Problem: Button isn't working
+
+update: Button is now working, but will update the time out whenever the button is clicked again.
+
+Problem*: try to find a way to send data to the database.  
+
+*/
+
+?>
+
